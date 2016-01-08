@@ -19,15 +19,19 @@
 		http.send();
 	}
 
+	// same mathod used by jQuery to check if a url is valid
 	function isValidUrl (url) {
 		return /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})).?)(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(url);
 	}
 
+	// update the results field with the data provided by the ajax call
 	function updateResultingUrl (data) {
 		resultingUrl.innerHTML = data;
 	}
 
 	sendButton.addEventListener('click', function() {
+		// if the user inputs a url with http://, GREAT
+		// else, test again with http://
 		var cleanUrl = isValidUrl(urlInput.value) ? urlInput.value : 
 						(isValidUrl('http://' + urlInput.value) ? 'http://' + urlInput.value : false);
 		if (cleanUrl) ajaxRequest('POST', apiUrl + encodeURIComponent(cleanUrl), updateResultingUrl);
