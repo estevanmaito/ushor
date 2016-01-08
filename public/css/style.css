@@ -1,0 +1,96 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100vh;
+}
+
+body {
+	height: 100%;
+	padding-top: 0.67em;
+
+	font-size: 16px;
+	font-family: 'Didact Gothic';
+
+	//background: linear-gradient(30deg, #F7CAC9, #8AA3CF);
+	background: url('../img/mountain.jpg') no-repeat center;
+	background-size: cover;
+}
+
+.container {
+	width: 90%;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.logo {
+	text-align: center;
+}
+
+.logo h1 {
+	margin: 0;
+	font-size: 4rem;
+}
+
+.logo p {
+	margin-top: 0;
+}
+
+.input-flex-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 16rem;
+}
+
+.result-flex-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+input.long-url {
+	height: 4rem;
+	padding-left: 1rem;
+	font-size: 1.4rem;
+	
+	flex: 3 1;
+
+	border: 1px solid #EB9587;
+}
+
+button {
+	border: none;
+}
+
+.btn {
+	background: #666;
+}
+
+.btn-send {
+	height: 4rem;
+	font-size: 1.4rem;
+	
+	flex: 1 1;
+
+	background: #EB9587;
+
+	transition: all .2s ease-in-out;
+}
+
+.btn-send:active {
+	background: #EB9577
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer a {
+	text-decoration: none;
+	color: #fff;
+}

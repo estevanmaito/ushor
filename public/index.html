@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>URL Shortener</title>
+	
+	<link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/public/css/normalize.css">
+	<link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+	<a href="https://github.com/estevanmaito/ushor" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+	<div class="container">
+		
+		<header class="logo">
+			<h1>Ushor</h1>
+			<p>URL Shortener</p>
+		</header>
+
+		<div class="input-flex-container">
+			<input type="text" class="long-url" placeholder="Paste a link to shorten it">
+			<button type="submit" class="btn btn-send">SHORTEN!</button>
+		</div>
+
+		<div class="result-flex-container">
+			<span class="resulting-url"></span>
+		</div>
+	</div>
+
+	<footer>
+		<p>Made by <a href="http://estevanmaito.com" target="_blank">Estevan Maito</a></p>
+	</footer>
+
+	<script type="text/javascript" src="/controllers/shortenerHandler.client.js"></script>
+</body>
+</html>
