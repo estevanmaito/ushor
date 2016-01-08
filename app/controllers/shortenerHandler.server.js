@@ -48,14 +48,14 @@ function shortenerHandler (db) {
 			if (err) throw err;
 
 			if (result) {
-				res.send(process.env.APP_URL + '/' + result.shortUrl);
+				res.send(process.env.APP_URL + result.shortUrl);
 			} else {
 				urls.insert({
 					longUrl: cleanUrl,
 					shortUrl: makeid(urls)
 				}, function(err, result) {
 					if (err) throw err;
-					res.send(process.env.APP_URL + '/' + result.ops[0].shortUrl);
+					res.send(process.env.APP_URL + result.ops[0].shortUrl);
 				});
 			}
 		});
