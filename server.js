@@ -4,9 +4,11 @@ var express = require('express');
 var routes = require('./app/routes/index.js');
 var mongo = require('mongodb').MongoClient;
 
+var URImongo = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || process.env.MONGO_URI;
+
 var app = express();
 
-mongo.connect('mongodb://localhost:27017/url-shortener', function(err, db) {
+mongo.connect(URImongo, function(err, db) {
 	if (err) {
 		throw new Error('Database failed to connect!');
 	} else {
@@ -18,8 +20,10 @@ mongo.connect('mongodb://localhost:27017/url-shortener', function(err, db) {
 
 	routes(app, db);
 
-	app.listen(3000, function() {
-		console.log('Listening on port 3000...');
-	});
+	// app.listen(3000, function() {
+	// 	console.log('Listening on port 3000...');
+	// });
+
+	app.listen(process.env.PORT || 8080);
 
 });
