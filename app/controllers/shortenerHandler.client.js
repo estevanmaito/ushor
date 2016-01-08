@@ -4,7 +4,7 @@
 	var sendButton = document.querySelector('.btn-send');
 	var urlInput = document.querySelector('.long-url');
 	var resultingUrl = document.querySelector('.resulting-url');
-	var apiUrl = process.env.APP_URL;
+	var apiUrl = 'https://ushor.herokuapp.com/';
 
 	function ajaxRequest (method, url, callback) {
 		var http = new XMLHttpRequest();
